@@ -10,8 +10,19 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            ProductTest();
+             ProductTest();
             //Categorytest();
+            //CustomerTest();
+
+        }
+
+        private static void CustomerTest()
+        {
+            CustomerManager customerManager = new CustomerManager(new EFCustomerDal());
+            foreach (var customer in customerManager.GetAll())
+            {
+                Console.WriteLine(customer.ContactName);
+            }
         }
 
         private static void Categorytest()
@@ -26,10 +37,20 @@ namespace ConsoleUI
         private static void ProductTest()
         {
             ProductManager productManager = new ProductManager(new EFProductDal());
-            foreach (var product in productManager.GetProductDetails())
+            var result = productManager.GetProductDetails();
+            if (result.Success == true)
             {
-                Console.WriteLine(product.ProductName+"/"+product.CategoryName);
+                foreach (var product in result.Data)
+                {
+                    Console.WriteLine(product.ProductName + "/" + product.CategoryName);
+                }
             }
+            else
+            {
+                Console.WriteLine(result.Message);
+            }
+
+
         }
     }
 }
