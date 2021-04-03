@@ -19,7 +19,7 @@ namespace Business.Constants
        
         public static string CategoryLimitExceded="Kategori limiti asildigi ucun yeni urun eklenemiyor";
         public static string AuthorizationDenied="Yetkiniz yok";
-        public static string UserRegistered="Kayi oldu";
+        public static string UserRegistered="Kayit oldu";
         public static string UserNotFound ="Kullanici bulunamadi";
         public static string PasswordError="Parola hatasi";
         public static string SuccessfulLogin="Basarili giris";
