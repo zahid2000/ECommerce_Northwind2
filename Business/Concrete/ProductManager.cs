@@ -57,7 +57,7 @@ namespace Business.Concrete
         {
             //is kodlari
 
-            if (DateTime.Now.Hour == 22)
+            if (DateTime.Now.Hour == 4)
             {
                 return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
             }
